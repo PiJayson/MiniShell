@@ -1,0 +1,11 @@
+test -d obj || mkdir obj
+test -d bin || mkdir bin
+cc -Iinclude -c src/utils.c -o obj/utils.o
+cc -Iinclude -c src/mshell.c -o obj/mshell.o
+cc -Iinclude -c src/builtins.c -o obj/builtins.o
+cc -Iinclude -c src/exec.c -o obj/exec.o
+cc -Iinclude obj/utils.o obj/mshell.o obj/builtins.o obj/exec.o obj/siparse.a -o bin/mshell 
+/usr/bin/ld: obj/mshell.o:(.bss+0x0): multiple definition of `signal_data'; obj/utils.o:(.bss+0x0): first defined here
+/usr/bin/ld: obj/exec.o:(.bss+0x0): multiple definition of `signal_data'; obj/utils.o:(.bss+0x0): first defined here
+collect2: error: ld returned 1 exit status
+make: *** [Makefile:19: bin/mshell] Error 1
