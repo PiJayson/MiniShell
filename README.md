@@ -2,7 +2,7 @@
 <!-- ![nvm version](https://img.shields.io/badge/tests-3%20failed-red.svg) -->
 
 ## **Introduction**
-Basic shell project developed furing Operating Systems course at *TCS@JU*.
+Basic shell with wide possibilites.
 
 ## **Last changes**
 - code reorganization
